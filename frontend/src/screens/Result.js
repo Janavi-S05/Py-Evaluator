@@ -45,7 +45,7 @@ export default function Result()
         <li><a href="profile.html">Profile</a></li>
         <li><a href="/leaderboard">Leaderboard</a></li>
     </ul>
-<div class="container-block">
+<div className="result-block" style={{display:'flex'}}>
 <div class="myblock">
 <table>
 <thead>

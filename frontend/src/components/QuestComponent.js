@@ -17,7 +17,7 @@ export default function QuestComponent(props)
   return (
     <div className="inner-quest">
          <h3 className="sub-quest">{props.quest}</h3>
-        <button type="button" class="quest-btn btn btn-danger" onClick={()=>{navigate(`/compiler/${props.id}`)}}>Solve</button>
+        <button type="button" class="quest-btn btn btn-danger" style={{width:100,marginRight:20}}onClick={()=>{navigate(`/compiler/${props.id}`)}}>Solve</button>
               
     </div>
     

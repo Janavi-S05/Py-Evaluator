@@ -25,7 +25,7 @@
     color:rgba(25, 7, 72, 0.586);
     font-weight: 500;
   }
-    .container-block {
+    .result-block {
       padding: 10px;
       display: flex;
       flex-wrap: wrap;

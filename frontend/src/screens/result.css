@@ -25,16 +25,17 @@
     color:rgba(25, 7, 72, 0.586);
     font-weight: 500;
   }
-    .container-block {
-      padding: 10px;
+    .result-block {
       display: flex;
-      flex-wrap: wrap;
+      /* flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+      margin:auto; */
     }
     .myblock{
-      margin:60px auto auto auto;
-      display:block;
+      /* margin:60px auto auto auto;
+      display:block; */
+      display: flex;
     }
     table {
       display: grid;
@@ -49,13 +50,13 @@
       border-radius:20px;
     }
     
-    thead,
+     thead,
     tbody,
     tr {
       display: contents;
     }
     
-    th,
+     th,
     td {
       padding: 15px;
       overflow: hidden;
@@ -63,7 +64,7 @@
       white-space: nowrap;
     }
     
-    th {
+     th {
       position: sticky;
       top: 0;
       background: rgb(243, 66, 101);
@@ -73,16 +74,16 @@
       color: white;
     }
     
-    th:last-child {
+     th:last-child {
       border: 0;
     }
     
-    td {
+ td {
       padding-top: 10px;
       padding-bottom: 10px;
       color: #808080;
     }
     
-    tr:nth-child(even) td {
+     tr:nth-child(even) td {
       background: #f8f6ff;
     }
