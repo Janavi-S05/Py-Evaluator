@@ -17,6 +17,7 @@
        #button{
          display: flex;
          float: right;
+         margin-right: 70px;
        }
        .btn{
          margin-right:20px;
@@ -89,3 +90,44 @@
   textarea::-webkit-scrollbar{
   width: 0px;
   } 
+
+
+/* timer */
+   #clockdiv{
+    border-radius:5px;
+    box-shadow: 0 19px 38px rgba(186, 118, 118, 0.3);
+    padding-top:0px;
+      font-family: sans-serif;
+      color: #000;
+      display: inline-block;
+      text-align: center;
+  }
+  #clockdiv > div{
+      border-radius: 3px;
+      display: inline-flex;
+      height:40px;
+
+  }
+  .inner-clock timer-para{
+    margin:auto;
+    margin-top:0px;
+  }
+  #clockdiv div > span{
+      padding: 10px;
+      padding-right: 5px;
+      display: inline-block;
+  }
+  .mobile-container{
+    margin:0px;
+    padding:0px;
+    text-align: center;
+  }
+  .timer-para{
+    margin-top:4px;
+  }
+  .inner-clock{
+    padding:0px;
+    margin:0px;
+    height:55px;
+    border-radius:30px;
+  }
