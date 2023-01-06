@@ -7,6 +7,8 @@ import { useEffect,useState } from 'react';
 import {render} from 'react-dom';
 import "./compiler.css";
 import { Link } from 'react-router-dom';
+// import { toast } from 'react-toastify';
+// import Alert from './Alert';
 import CompilerComponent from '../components/CompilerComponent';
 export default function Compiler()
 {
@@ -15,7 +17,7 @@ export default function Compiler()
     const params=useParams()
     const id=params.id;
     useEffect(()=>{
-
+      window.myTimer();
         const fetchData=async()=>{
             const result=await axios.get(`/api/users/compile/${id}`);
             setCompile(result.data);
@@ -38,6 +40,24 @@ export default function Compiler()
       };
       fetchData();
     },[compile]);
+    const[count,setCount]= useState(0);
+ 
+  // const navigate=useNavigate();
+ 
+  // if(count==1)
+  // {
+  //   navigate("/");
+  // }
+
+  
+
+  // useEffect(()=>{
+    
+    
+  //  window.myTimer();
+   
+   
+  // },  [] )
 
     
   return (
@@ -130,7 +150,21 @@ export default function Compiler()
       <div class="column" >
         <center id="icon-time">
           <i class="fas fa-tachometer-alt" id="icon-space"></i>
-          <h id="head">5:00</h>
+          <div  class="mobile-container">
+              <div id="clockdiv">
+                <div className="inner-clock">
+                  <span className="hours" id="hour"></span>
+                  <h3 className="timer-para">:</h3>
+                </div>
+                <div className="inner-clock">
+                  <span className="minutes" id="minute"></span>
+                  <h3 className="timer-para">:</h3>
+                </div>
+                <div className="inner-clock">
+                  <span className="seconds" id="second"></span>
+                </div>
+              </div>
+            </div>
         </center>
         <div class="container" >
           <div class="wrap">
