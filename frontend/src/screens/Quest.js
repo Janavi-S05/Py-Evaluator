@@ -37,6 +37,7 @@ export default function Quest(props)
         },[]);
     
     return (
+        
         <div>
             
         {/* <h1>Inside quest page</h1> */}
@@ -44,6 +45,7 @@ export default function Quest(props)
         <div class="item quest-header">
             <h3 class="quest-header">Solved: 0/3</h3>
             <h3 class="quest-header"><Link to={`/home/${params.name}/leaderboard`} className='ques-board'>Leaderboard</Link></h3>
+            {/* <img src={require('./change-icon.png')} alt="img" onClick={handleThemeChange}/> */}
             <h3 class="quest-header">Profile</h3>
         </div>
         <div className="item sidebar">
