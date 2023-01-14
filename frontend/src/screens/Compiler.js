@@ -1,10 +1,14 @@
 import React from 'react';
 import { Navigate, renderMatches, useNavigate, useParams } from 'react-router-dom';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
 import axios from 'axios'; 
 import { useEffect,useState } from 'react';
 import {render} from 'react-dom';
 import "./compiler.css";
 import { Link } from 'react-router-dom';
+// import { toast } from 'react-toastify';
+// import Alert from './Alert';
 import CompilerComponent from '../components/CompilerComponent';
 export default function Compiler()
 {
@@ -30,6 +34,21 @@ export default function Compiler()
             const result=await axios.get(`/api/users/compile/${id}`);
             setCompile(result.data);
         
+        // e.preventDefault();
+        // try{
+        //   const quest=await Axios.get('/api/users/quest');
+        //   const [questobj]=quest.data;
+        //   console.log(quest.data)
+        //   console.log(questobj);
+        //   setQuestion(quest.data)
+         
+          
+        //    navigate(`/home/${params.name}/quest`);
+        // }
+        // catch(err){
+        //   console.log(err);
+        // }
+        
       }; 
       fetchData();
 
@@ -43,24 +62,26 @@ export default function Compiler()
     const[count,setCount]= useState(0);
  
     
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.body.className = `theme-${theme}`;
-  }, [theme]);
+ 
+  // const navigate=useNavigate();
 
-  const handleThemeChange = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  // if(count==1)
+  // {
+  //   navigate("/");
+  // }
+  // useEffect(()=>{ 
+  //  window.myTimer();
+  // },[])
+
     
   return (
-    <div className={`theme-${theme}`}>
+    <div>
     <div class="wrapper">
     <div class="section">
         <div class="topnav">
             <a href="#home" class="active">Python Evaluator</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <img src={require('./change-icon.png')} alt="img" onClick={handleThemeChange}/>
+            {/* <img src={require('./change-icon.png')} alt="img" onClick={handleThemeChange}/> */}
                 <button onClick={window['myFunction']} style={{height:'inherit'}}><i class="fa fa-bars"></i></button> 
             </a>
             <div id="myLinks">
@@ -194,7 +215,10 @@ export default function Compiler()
         </div>
             
         </div>
-      </div>
+       </div>
+    
+    
+    
     )
     
 }
