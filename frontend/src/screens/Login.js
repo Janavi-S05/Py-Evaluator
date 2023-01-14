@@ -1,7 +1,8 @@
 import React from 'react';
 import { Navigate, renderMatches, useNavigate } from 'react-router-dom';
 import { useEffect,useState } from 'react';
-
+import { BsFillSunFill } from "react-icons/bs";
+import { BsSun } from "react-icons/bs";
 import Home from './Home';
 import Axios from 'axios';
 import "./login.css";
@@ -44,11 +45,12 @@ export default function Login()
     <div className={`theme-${theme}`}>
     <div className="login-container">
     <form className="form-1" onSubmit={submitHandler}>
-    <label class="switch switch-left-right">
+    {/* <label class="switch switch-left-right">
 	    <input class="switch-input" type="checkbox" onClick={handleThemeChange} />
 	    <span class="switch-label" data-on="Light" data-off="Dark"></span> 
 	    <span class="switch-handle"></span> 
-    </label>
+    </label> */}
+    {theme==='light' ? <button className="login-icon" onClick={handleThemeChange} ><BsSun/></button>:<button className="login-icon" onClick={handleThemeChange} ><BsFillSunFill/></button> }
     {/* <img src={require('./change-icon.png')} class="icon-size"alt="img" onClick={handleThemeChange}/> */}
       <h1>Python Evaluator</h1>
       <label for="email">Email</label>
@@ -56,7 +58,7 @@ export default function Login()
       <label for="password">Password</label>
       <input type="password" name="password" id="password"  required onChange={(e)=>setPassword(e.target.value)}/>
       <span>Forgot Password?</span>
-      <button type="submit">Login</button>
+      <button class ="login-button"type="submit">Login</button>
     </form>
     
     </div> 
