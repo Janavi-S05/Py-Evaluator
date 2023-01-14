@@ -1,14 +1,10 @@
 import React from 'react';
 import { Navigate, renderMatches, useNavigate, useParams } from 'react-router-dom';
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
 import axios from 'axios'; 
 import { useEffect,useState } from 'react';
 import {render} from 'react-dom';
 import "./compiler.css";
 import { Link } from 'react-router-dom';
-// import { toast } from 'react-toastify';
-// import Alert from './Alert';
 import CompilerComponent from '../components/CompilerComponent';
 export default function Compiler()
 {
@@ -16,55 +12,57 @@ export default function Compiler()
     const[compile,setCompile]= useState([])
     const params=useParams()
     const id=params.id;
+    const [warnings, setWarnings] = useState(0);
+
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        setWarnings((prevWarnings) => prevWarnings + 1);
+        alert(`You have been warned ${warnings} times. Do not leave this page!`);
+        if (warnings >= 3) {
+          window.location.replace('/');
+        }
+      }
+    }
+
     useEffect(()=>{
       window.myTimer();
         const fetchData=async()=>{
             const result=await axios.get(`/api/users/compile/${id}`);
             setCompile(result.data);
         
-        // e.preventDefault();
-        // try{
-        //   const quest=await Axios.get('/api/users/quest');
-        //   const [questobj]=quest.data;
-        //   console.log(quest.data)
-        //   console.log(questobj);
-        //   setQuestion(quest.data)
-         
-          
-        //    navigate(`/home/${params.name}/quest`);
-        // }
-        // catch(err){
-        //   console.log(err);
-        // }
-        
-      };
+      }; 
       fetchData();
+
+      window.myTimer();
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+      return () => {
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+      };
+
     },[compile]);
     const[count,setCount]= useState(0);
  
-  // const navigate=useNavigate();
- 
-  // if(count==1)
-  // {
-  //   navigate("/");
-  // }
-
-  
-
-  // useEffect(()=>{
     
-    
-  //  window.myTimer();
-   
-   
-  // },  [] )
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.body.className = `theme-${theme}`;
+  }, [theme]);
 
+  const handleThemeChange = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
     
   return (
+    <div className={`theme-${theme}`}>
     <div class="wrapper">
     <div class="section">
         <div class="topnav">
             <a href="#home" class="active">Python Evaluator</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <img src={require('./change-icon.png')} alt="img" onClick={handleThemeChange}/>
+                <button onClick={window['myFunction']} style={{height:'inherit'}}><i class="fa fa-bars"></i></button> 
+            </a>
             <div id="myLinks">
                 {/* <a href="/compiler">All</a>
                 <a href="/">Question 1</a>
@@ -75,10 +73,9 @@ export default function Compiler()
                 <Link to={`/compiler/2`}>Question 2</Link>
                 <Link to={`/compiler/3`}>Question 3</Link> 
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <button onClick={window['myFunction']}><i class="fa fa-bars"></i></button> 
-            </a>
+            
         </div>
+    </div>
     </div>
 
 
@@ -174,20 +171,30 @@ export default function Compiler()
           </div>
           <div class="col">
             <div id="button">
-            <button class="btn btn-success">Run Code</button>
+            {/* <button class="btn btn-success">Run Code</button> */}
+            <label class="btn btn-success">Run Code</label>
             <br />
-            <button class="btn btn-success">Submit</button>
+            {/* <label id="check" class="btn btn-success" >Submit</button> */}
             <br />
+            <label for="check" class="btn btn-success">Submit</label>
+            {/* <input id="check" type="checkbox"></input> */}
             <pre id="ans"></pre>
             </div>
           </div>
+          <input id="check" type="checkbox"></input>
+          <div class="test" onclick="createBalloons(30)">
+              {/* <p >Code passed sucessfully!!!</p>
+            </div> */}
+            <div id="parent">
+              <div class="msg">Code</div>
+              <div class="msg">passed</div>
+              <div class="msg">Successfully!!!</div>
+            </div>
+            </div>
         </div>
             
         </div>
       </div>
-    
-    
-    
     )
     
 }
