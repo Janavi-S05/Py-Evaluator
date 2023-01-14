@@ -11,13 +11,6 @@ export default function Home(){
     const params=useParams();
 
     const navigate=useNavigate();
-   
-
-   
-
-   
-    
-
     return(
         <div className="home-body">
         <div className="nav-board">
