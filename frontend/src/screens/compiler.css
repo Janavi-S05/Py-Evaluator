@@ -38,7 +38,6 @@
   
   .topnav {
     overflow: hidden;
-    background-color: #333;
     position: relative;
   }
   
@@ -46,25 +45,27 @@
     display: none;
   }
   .topnav a {
-    color: white;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
     display: block;
   }
   .topnav a.icon {
-    background: black;
-    display: block;
+    background: rgb(243, 66, 101);;
+    padding:0px;
     position: absolute;
     right: 0;
     top: 0;
   }
   .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+    background: rgb(243, 66, 101);;
+  }
+  .icon{
+    margin-top:5px;
+    margin-right:5px;
   }
   .active {
-    background-color: rgb(243, 66, 101);;;
+    background-color: rgb(243, 66, 101);
     color: white;
   }
   .wrap textarea{
@@ -98,7 +99,6 @@
     box-shadow: 0 19px 38px rgba(186, 118, 118, 0.3);
     padding-top:0px;
       font-family: sans-serif;
-      color: #000;
       display: inline-block;
       text-align: center;
   }
@@ -130,4 +130,71 @@
     margin:0px;
     height:55px;
     border-radius:30px;
+  }
+
+  /* code passed message*/
+  #check {
+    display: none;
+  }
+  .test {
+    display:flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    color: crimson;
+    }
+  
+  #check:checked + .test {
+    height: 100px;
+  }
+  #parent {
+    position: relative;
+    width: 400px;
+    height: 15vh;
+    margin:auto;
+    overflow: hidden;
+  }
+  .msg {
+    position:absolute;
+    left: 0;
+    bottom: -120px;
+    height: 120px;
+    width: 120px;
+    background: linear-gradient(
+            to right, #f3337d, #fb7e2b);
+    color: white;
+    line-height: 115px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border-radius: 60px;
+    animation: move 6s infinite linear;
+  }
+  .msg:nth-child(2){
+    left:120px;
+    animation-delay: 2s;
+  }
+  .msg:nth-child(3){
+    left:240px;
+    animation-delay: 4s;
+  }
+  @keyframes move {
+    0% {
+      bottom: -120px;
+    }
+    100% {
+      bottom: 100%;
+    }
+  }
+
+  /* dark theme */
+  .theme-light {
+    background-color: white;
+    color: black;
+  }
+  .theme-dark {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    height:100vh;
   }
