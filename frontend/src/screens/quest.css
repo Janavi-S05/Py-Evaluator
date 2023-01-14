@@ -51,6 +51,9 @@
     font-size: 1.7rem;;
     color: black;
   }
+  .theme-dark .num{
+    color:white;
+  }
   
    /* question part */
    .content-1{
