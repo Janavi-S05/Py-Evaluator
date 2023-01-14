@@ -1,11 +1,11 @@
 .home-body{
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOGOJ9YZauHIslrVpckhDyq8Frh2hxeMhiRA&usqp=CAU");
+    /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOGOJ9YZauHIslrVpckhDyq8Frh2hxeMhiRA&usqp=CAU"); */
     background-repeat: no-repeat;
     background-size: cover;
     height:100vh;
     }
     .home-content{
-        background-color: #fff;
+        /* background-color: #fff; */
         display: flex;
         flex-direction: column;
         width:40vw;
@@ -16,6 +16,9 @@
         padding-top:20px;
         text-align: center;
         color: rgba(0, 0, 0, 0.6);
+      }
+      .theme-dark .heading{
+        color:white;
       }
       .home-box{
         padding-left:30px;
@@ -33,6 +36,9 @@
         font-size: 22px;
         font-weight: 550;
         color: rgba(0, 0, 0, 0.6);
+      }
+      .theme-dark .home-instruction h4{
+        color:white;
       }
       .home-instruction ul li{
         font-size:1.2em;
