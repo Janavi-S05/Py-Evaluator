@@ -31,16 +31,26 @@ export default function Login()
         }
         
       }
-      
-          
-    
-   
-  return (
+      const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.body.className = `theme-${theme}`;
+  }, [theme]);
 
-    
+  const handleThemeChange = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+  return (
+    <div className={`theme-${theme}`}>
     <div className="login-container">
     <form className="form-1" onSubmit={submitHandler}>
-      <h1>Login</h1>
+    <label class="switch switch-left-right">
+	    <input class="switch-input" type="checkbox" onClick={handleThemeChange} />
+	    <span class="switch-label" data-on="Light" data-off="Dark"></span> 
+	    <span class="switch-handle"></span> 
+    </label>
+    {/* <img src={require('./change-icon.png')} class="icon-size"alt="img" onClick={handleThemeChange}/> */}
+      <h1>Python Evaluator</h1>
       <label for="email">Email</label>
       <input type="email" name="email" id="email"  required onChange={(e)=>setEmail(e.target.value)}/>
       <label for="password">Password</label>
@@ -50,9 +60,7 @@ export default function Login()
     </form>
     
     </div> 
-    
-
-     
+    </div>
     )
     
 }
