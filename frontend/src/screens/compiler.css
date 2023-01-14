@@ -47,7 +47,7 @@
   .topnav a {
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
     display: block;
   }
   .topnav a.icon {
@@ -102,11 +102,13 @@
       display: inline-block;
       text-align: center;
   }
+  .theme-dark #clockdiv{
+    box-shadow: 0 19px 38px rgba(228, 207, 207, 0.647);
+  }
   #clockdiv > div{
       border-radius: 3px;
       display: inline-flex;
       height:40px;
-
   }
   .inner-clock timer-para{
     margin:auto;
@@ -186,15 +188,4 @@
     100% {
       bottom: 100%;
     }
-  }
-
-  /* dark theme */
-  .theme-light {
-    background-color: white;
-    color: black;
-  }
-  .theme-dark {
-    background-color: rgba(0,0,0,0.6);
-    color: white;
-    height:100vh;
   }
