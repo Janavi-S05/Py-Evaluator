@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 export default function Home(){
 
     const params=useParams();
-
     const navigate=useNavigate();
     return(
         <div className="home-body">
