@@ -17,7 +17,7 @@
        #button{
          display: flex;
          float: right;
-         margin-right: 70px;
+         margin-right: 40px;
        }
        .btn{
          margin-right:20px;
@@ -34,6 +34,9 @@
    .quest-content{
      background-color: rgba(0,0,0,0.1);
      padding-left:20px;
+   }
+   .theme-dark .quest-content{
+    background-color: rgba(0, 0, 0, 0.325);
    }
   
   .topnav {
@@ -69,15 +72,15 @@
     color: white;
   }
   .wrap textarea{
-    width: 40vw;
+    width: 42vw;
     resize: none;
-    height: 50vh;
+    height: 46vh;
     outline: none;
     padding: 15px;
     font-size: 16px;
     margin-top: 20px;
     border-radius: 5px;
-    max-height: 300px;
+    /* max-height: 300px; */
     caret-color: #4671EA;
     border: 1px solid #bfbfbf;
   }
@@ -98,21 +101,18 @@
     border-radius:5px;
     box-shadow: 0 19px 38px rgba(186, 118, 118, 0.3);
     padding-top:0px;
-      font-family: sans-serif;
-      display: inline-block;
-      text-align: center;
+    font-family: sans-serif;
+    display: inline-block;
+    text-align: center;
   }
   .theme-dark #clockdiv{
-    box-shadow: 0 19px 38px rgba(228, 207, 207, 0.647);
+    box-shadow: 0 19px 38px rgba(228, 207, 207, 0.23);
+    background-color: #898da2a0;
   }
   #clockdiv > div{
       border-radius: 3px;
       display: inline-flex;
       height:40px;
-  }
-  .inner-clock timer-para{
-    margin:auto;
-    margin-top:0px;
   }
   #clockdiv div > span{
       padding: 10px;
@@ -132,60 +132,4 @@
     margin:0px;
     height:55px;
     border-radius:30px;
-  }
-
-  /* code passed message*/
-  #check {
-    display: none;
-  }
-  .test {
-    display:flex;
-    flex-direction: column;
-    height: 0;
-    overflow: hidden;
-    margin-top: 10px;
-    color: crimson;
-    }
-  
-  #check:checked + .test {
-    height: 100px;
-  }
-  #parent {
-    position: relative;
-    width: 400px;
-    height: 15vh;
-    margin:auto;
-    overflow: hidden;
-  }
-  .msg {
-    position:absolute;
-    left: 0;
-    bottom: -120px;
-    height: 120px;
-    width: 120px;
-    background: linear-gradient(
-            to right, #f3337d, #fb7e2b);
-    color: white;
-    line-height: 115px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    border-radius: 60px;
-    animation: move 6s infinite linear;
-  }
-  .msg:nth-child(2){
-    left:120px;
-    animation-delay: 2s;
-  }
-  .msg:nth-child(3){
-    left:240px;
-    animation-delay: 4s;
-  }
-  @keyframes move {
-    0% {
-      bottom: -120px;
-    }
-    100% {
-      bottom: 100%;
-    }
   }
