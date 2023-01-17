@@ -21,10 +21,19 @@
   }
   .ques-board{
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.679);
+    color: rgba(0, 0, 0, 0.988);
   }
   .ques-board:hover{
-    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    color: rgba(50, 42, 42, 0.988);
+  }
+  .theme-dark .ques-board{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.988);
+  }
+  .theme-dark .ques-board:hover{
+    text-decoration: none;
+    color: rgba(180, 168, 168, 0.988);
   }
   .item {
     display: flex;
