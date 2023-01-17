@@ -107,7 +107,29 @@ const data={
         },
 
     ],
+    
+     outputSuccessfull:[
+        {
+            op1:"code",
+            op2:"Compiled",
+            op3:"successfully",
+        }
+    ],
 
+    outputPublicFailed:[
+        {
+            input:"3",
+            youroutput:"5",
+            expected:"10",
+        }
+
+    ],
+
+    outputPrivateFailed:[
+        {
+            totaltestcasePassed:"5/10",
+        }
+    ]
    
     
 
