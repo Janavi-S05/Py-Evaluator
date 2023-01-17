@@ -32,7 +32,7 @@
       justify-content: center;
       margin:auto; */
     }
-    .myblock{
+    .myblock1{
       /* margin:60px auto auto auto;
       display:block; */
       display: flex;
@@ -40,23 +40,21 @@
     table {
       display: grid;
       border-collapse: collapse;
-      min-width: 100%;
+      /* min-width: 100%; */
       grid-template-columns: 
         minmax(100px, 170px)
-        minmax(100px, 300px)
-        minmax(100px, 270px);
+        minmax(100px, 300px);
       background: rgba(244, 244, 244, 0.1);
       box-shadow: 0 19px 38px rgba(178, 33, 33, 0.3);
       border-radius:20px;
     }
-    
-     thead,
+    thead,
     tbody,
     tr {
       display: contents;
     }
     
-     th,
+    th,
     td {
       padding: 15px;
       overflow: hidden;
