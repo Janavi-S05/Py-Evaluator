@@ -5,12 +5,15 @@
     height:100vh;
     }
     .home-content{
-        /* background-color: #fff; */
+        background-color: rgb(248, 248, 248);
         display: flex;
         flex-direction: column;
         width:40vw;
         margin:auto;
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3);
+      }
+      .theme-dark .home-content{
+        background-color: #3c3e50;
       }
       .heading{
         padding-top:20px;
@@ -21,10 +24,16 @@
         color:white;
       }
       .home-box{
-        padding-left:30px;
+        border:1px solid #a4a4a9;
+        width:fit-content;
+        margin-left:75px;
+        border-radius:8px;
+        /* padding-left:30px; */
+        border-left: 7px solid rgb(220, 79, 107);
       }
       .home-content h3{
-        margin-left:35px;
+        margin-left:10px;
+        margin-right: 10px;
         font-size: 20px;
         font-weight: 550;
       }
