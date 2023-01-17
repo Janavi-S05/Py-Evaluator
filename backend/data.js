@@ -44,22 +44,22 @@ const data={
         },
 
     ],
-
+    
     results:[
         {
             questnum:'1',
-            time:'0:5:32',
             passed:'7/10',
         },
         {
             questnum:'2',
-            time:'0:16:30',
             passed:'10/10',
         },
         {
             questnum:'3',
-            time:'0:20:30',
             passed:'9/10',
+        },
+        {
+            time:'2.30.05',
         },
     ],
 
@@ -74,9 +74,6 @@ const data={
             constraint1: "1 nums.length 105",
             constraint2:"k>0"
         },
-
-        
-
     ],
     questiondescription2:[
 
