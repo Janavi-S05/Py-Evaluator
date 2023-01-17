@@ -6,7 +6,7 @@ import {render} from 'react-dom';
 import axios from 'axios'; 
 import { useEffect,useState } from 'react'; 
 import LeaderboardComponent from '../components/LeaderboardComponent';
-
+import "./leaderboard.css";
 export default function Leaderboard()
 {
 
@@ -38,26 +38,24 @@ export default function Leaderboard()
     },[]);
    
   return (
-
-        <div>
-        
-        <div className="leaderboard-body">
-    <div className="nav-board">
-    <ul>
-        <li><a href="profile.html">Profile</a></li>
+    <div>
+    <div className="leaderboard">
+      <div className="nav-board">
+        <ul>
+          <li><a href="profile.html">Profile</a></li>
         {/* <li><a href="/leaderboard">Leaderboard</a></li> */}
-    </ul>
-    </div>
-<div className="board-container">
-<div className="myblock">
-<table>
-<thead>
-  <tr>
-    <th>Rank</th>
-    <th colspan="2">Name</th>
-    <th>Finish Time</th>
-  </tr>
-</thead>
+        </ul>
+      </div>
+      <div className="board-container">
+        <div className="myblock">
+        <table>
+          <thead>
+            <tr>
+            <th>Rank</th>
+            <th colspan="2">Name</th>
+            <th className="finish-time">Finish Time</th>
+            </tr>
+          </thead>
 {/* <tbody>
   <tr>
     <td>1</td>
@@ -72,10 +70,6 @@ export default function Leaderboard()
     </td>
     <td>{props.finishtime}</td>
   </tr>
-  
-    
-    
-  
   </tbody> */}
   {leaderboard.map((q)=>{
                 console.log(q);
@@ -87,24 +81,14 @@ export default function Leaderboard()
             />
             );
         }
-           
-           
-
         )}
   </table>
 </div>
+    </div>
 </div>
-</div>
-        
-        
-        </div>
-    
+</div> 
     )
-    
 }
-
-
-
 // {leaderboard.map((q)=>{
 //     console.log(q);
 // return(
@@ -115,10 +99,4 @@ export default function Leaderboard()
 // />
 // );
 // }
-
-
-
 // )}
-
-
-
