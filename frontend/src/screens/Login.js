@@ -6,10 +6,6 @@ import { BsSun } from "react-icons/bs";
 import Home from './Home';
 import Axios from 'axios';
 import "./login.css";
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import {render} from 'react-dom';
-
 export default function Login()
 {
 
@@ -45,13 +41,7 @@ export default function Login()
     <div className={`theme-${theme}`}>
     <div className="login-container">
     <form className="form-1" onSubmit={submitHandler}>
-    {/* <label class="switch switch-left-right">
-	    <input class="switch-input" type="checkbox" onClick={handleThemeChange} />
-	    <span class="switch-label" data-on="Light" data-off="Dark"></span> 
-	    <span class="switch-handle"></span> 
-    </label> */}
     {theme==='light' ? <button className="login-icon" onClick={handleThemeChange} ><BsSun/></button>:<button className="login-icon" onClick={handleThemeChange} ><BsFillSunFill/></button> }
-    {/* <img src={require('./change-icon.png')} class="icon-size"alt="img" onClick={handleThemeChange}/> */}
       <h1>Python Evaluator</h1>
       <label for="email">Email</label>
       <input type="email" name="email" id="email"  required onChange={(e)=>setEmail(e.target.value)}/>
