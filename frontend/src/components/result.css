@@ -7,10 +7,19 @@
     height:70px;
     background-color: rgb(243, 66, 101);
   }
+  .nav-board{
+    height:100vh;
+    background: url("https://www.shutterstock.com/image-photo/cream-concreted-wall-interiors-outdoor-260nw-1692744547.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .result-box{
     background: rgba(0,0,0,0.1);
+    justify-content: center;
+    padding-top:3px;
     width:20%;
    border-radius:8px;
+   margin-left: 100px;
   }
   .nav-board li {
     float: right;
@@ -32,38 +41,49 @@
       align-items: center;
       justify-content: center;
     }
-    .myblock{
+    .myblock1{
       margin:60px auto auto auto;
       display:block;
     }
-    table {
+    .myblock1 table {
       display: grid;
       border-collapse: collapse;
       min-width: 100%;
       grid-template-columns: 
         minmax(100px, 170px)
-        minmax(100px, 300px)
-        minmax(100px, 270px);
-      background: rgba(244, 244, 244, 0.1);
+        minmax(100px, 300px);
       box-shadow: 0 19px 38px rgba(178, 33, 33, 0.3);
-      border-radius:20px;
+      border-radius:30px;
+      background-color: #f8f6ff;
     }
-    
-    thead,
+    .timeDiv1{
+      margin-bottom:20px;
+      flex-direction: row;
+      border:1px solid #808080;
+      padding:5px;
+      font-weight: bold;
+      width:fit-content;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-left:5px solid crimson;
+    }
+    .myblock1 thead,
     tbody,
     tr {
       display: contents;
+      border-left:1px solid #000;
     }
-    
-    th,
+    .myblock1 th,
     td {
       padding: 15px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      text-align: center;
+      border-right:1px dashed rgb(255, 120, 120);
     }
     
-    th {
+    .myblock1 th {
       position: sticky;
       top: 0;
       background: rgb(243, 66, 101);
@@ -71,18 +91,29 @@
       font-weight: normal;
       font-size: 1.1rem;
       color: white;
+      text-align: center;
     }
-    
-    th:last-child {
+    .myblock1
+    td:last-child{
+      border-right: none;
+    }
+    .myblock1 th:last-child {
       border: 0;
     }
-    
-    td {
+    .myblock1 td {
       padding-top: 10px;
       padding-bottom: 10px;
       color: #808080;
+      text-align: center;
     }
-    
-    tr:nth-child(even) td {
+    .myblock1 tr:nth-child(even) td {
       background: #f8f6ff;
+    }
+    .theme-dark {
+      background-color: #2a2e3b;
+      color: white;
+      height:100vh;
+    }
+    .theme-dark .form-1 h1,.theme-dark .form-1 label{
+      color:white;
     }
