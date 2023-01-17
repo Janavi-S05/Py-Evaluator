@@ -16,22 +16,6 @@ export default function Quest(props)
             const fetchData=async()=>{
                 const result=await axios.get('/api/users/quest');
                 setQuestion(result.data);
-            
-            // e.preventDefault();
-            // try{
-            //   const quest=await Axios.get('/api/users/quest');
-            //   const [questobj]=quest.data;
-            //   console.log(quest.data)
-            //   console.log(questobj);
-            //   setQuestion(quest.data)
-             
-              
-            //    navigate(`/home/${params.name}/quest`);
-            // }
-            // catch(err){
-            //   console.log(err);
-            // }
-            
           };
           fetchData();
         },[]);
@@ -45,7 +29,6 @@ export default function Quest(props)
         <div class="item quest-header">
             <h3 class="quest-header">Solved: 0/3</h3>
             <h3 class="quest-header"><Link to={`/home/${params.name}/leaderboard`} className='ques-board'>Leaderboard</Link></h3>
-            {/* <img src={require('./change-icon.png')} alt="img" onClick={handleThemeChange}/> */}
             <h3 class="quest-header">Profile</h3>
         </div>
         <div className="item sidebar">
@@ -70,19 +53,10 @@ export default function Quest(props)
             />
             );
         }
-           
-           
-
         )}
-                {/* </div> */}
-
-                
-                
             </div>
             
-        </div>
-        
-        
+        </div> 
     </div>
     </div>
     )
