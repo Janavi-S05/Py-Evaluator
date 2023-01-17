@@ -16,6 +16,12 @@ userRouter.post('/signin', expressAsyncHandler(async(req,res)=>{
     return;
 }))
 
+userRouter.post('/output/:id',expressAsyncHandler(async(req,res)=>{
+    res.send(data.outputPrivateFailed);
+    return;
+}))
+
+
 userRouter.get('/quest',async(req,res)=>{
     res.send(data.questions);
 })
