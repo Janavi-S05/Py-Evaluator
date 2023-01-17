@@ -1,4 +1,4 @@
-.nav-board ul {
+.navigation-board ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
     height:70px;
     background-color: rgb(243, 66, 101);
   }
-  .nav-board{
+  .navigation-board{
     height:100vh;
     background: url("https://www.shutterstock.com/image-photo/cream-concreted-wall-interiors-outdoor-260nw-1692744547.jpg");
     background-repeat: no-repeat;
@@ -21,17 +21,17 @@
    border-radius:8px;
    margin-left: 100px;
   }
-  .nav-board li {
+  .navigation-board li {
     float: right;
     margin-right: 50px;
     margin-top: 20px;
   }
   
-  .nav-board li a {
+  .navigation-board li a {
     font-size: 23px;
     padding: 8px;
     text-decoration: none;
-    color:rgba(25, 7, 72, 0.586);
+    color:rgba(3, 2, 6, 0.586);
     font-weight: 500;
   }
     .result-block {
@@ -68,13 +68,13 @@
       border-left:5px solid crimson;
     }
     .myblock1 thead,
-    tbody,
-    tr {
+    .myblock1 tbody,
+    .myblock1 tr {
       display: contents;
       border-left:1px solid #000;
     }
     .myblock1 th,
-    td {
+    .myblock1 td {
       padding: 15px;
       overflow: hidden;
       text-overflow: ellipsis;
