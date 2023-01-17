@@ -39,7 +39,7 @@
     text-decoration: none;
     color: rgba(13, 3, 36, 0.586);
   }
-  table {
+  .myblock table {
     display: grid;
     border-collapse: collapse;
     min-width: 100%;
@@ -49,29 +49,29 @@
       minmax(100px, 270px);
   }
   
-  thead,
-  tbody,
-  tr {
+  .myblock thead,
+  .myblock tbody,
+  .myblock tr {
     display: contents;
   }
   
-  th,
-  td {
+  .myblock th,
+  .myblock td {
     padding: 15px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  td div{
+  .myblock td div{
     display:flex;
     height:35px;
   }
-  td div p{
+  .myblock td div p{
     margin-top:auto;
     margin-bottom:auto;
     padding-left:8px;
   }
-  th {
+  .myblock th {
     position: sticky;
     top: 0;
     background: rgb(237, 90, 120);
@@ -81,17 +81,17 @@
     color: white;
   }
   
-  th:last-child {
+  .myblock th:last-child {
     border: 0;
   }
   
-  td {
+  .myblock td {
     padding-top: 10px;
     padding-bottom: 10px;
     color: #808080;
   }
   
-  tr:nth-child(even) td {
+  .myblock tr:nth-child(even) td {
     background: #f8f6ff;
   }
 
