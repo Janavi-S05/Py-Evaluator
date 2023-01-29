@@ -4,9 +4,12 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Home from "./screens/Home.js";
 import Login from './screens/Login.js';
 import Quest from './screens/Quest.js';
+import Admin from './screens/Admin.jsx';
+import Filter from './screens/Filter.js';
 import axios  from 'axios';
 import Axios from 'axios';
 import Leaderboard from './screens/Leaderboard.js';
+// import Modal from './screens/Modal.js';
 import Result from './screens/Result.js';
 import Compiler from './screens/Compiler.js';
 
@@ -22,7 +25,6 @@ function App() {
     };
     fetchData();
   },[]);
-
   // const submitHandler=async(e)=>{
   //   e.preventDefault();
   //   try{
@@ -62,6 +64,9 @@ function App() {
           <Route path="/home/:name/leaderboard" element={<Leaderboard/>}/>
           <Route path="/home/:name/result" element={<Result/>}/>
           <Route path="/compiler/:id" element={<Compiler/>}/>
+          <Route path='/admin' element={<Admin/>}/>
+          <Route path='/filter' element={<Filter/>}/>
+          {/* <Route path='/modal' element={<Modal/>}/> */}
           <Route path='/' element={<Login/>}/>
       </Routes>
    
