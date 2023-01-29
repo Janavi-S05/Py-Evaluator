@@ -59,3 +59,12 @@
         margin: auto;
         margin-bottom: 40px;;
       }
+      .logout{
+        border:none;
+        outline:none;
+        margin-bottom:9px;
+      }
+      .logout:hover{
+        border:none;
+        outline:none;
+      }
