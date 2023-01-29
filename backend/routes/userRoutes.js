@@ -8,18 +8,31 @@ userRouter.get('/',async(req,res)=>{
 })
 
 userRouter.post('/signin', expressAsyncHandler(async(req,res)=>{
+    // res.send({
+    //     name:'Raina',
+    //     regNumber:'120',
+
+    // });
+    res.send(data.users);
+    return;
+}))
+
+userRouter.post('/output/:id',expressAsyncHandler(async(req,res)=>{
+    res.send(data.outputPublicFailed);
+    return;
+}))
+
+userRouter.post('/email', expressAsyncHandler(async(req,res)=>{
     res.send({
-        name:'Raina',
-        regNumber:'120',
+       status:"sent Successfully"
 
     });
     return;
 }))
 
-userRouter.post('/output/:id',expressAsyncHandler(async(req,res)=>{
-    res.send(data.outputPrivateFailed);
-    return;
-}))
+userRouter.get('/studentemail',async(req,res)=>{
+    res.send(data.studentEmail);
+})
 
 
 userRouter.get('/quest',async(req,res)=>{
@@ -32,6 +45,13 @@ userRouter.get('/leaderboard',async(req,res)=>{
 
 userRouter.get('/result',async(req,res)=>{
     res.send(data.results);
+})
+userRouter.get('/student',async(req,res)=>{
+    res.send(data.students);
+})
+
+userRouter.get('/questset',async(req,res)=>{
+    res.send(data.QuestionSet);
 })
 
 userRouter.get('/compile/:id',async(req,res)=>{
