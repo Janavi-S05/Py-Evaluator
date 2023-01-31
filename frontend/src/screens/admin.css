@@ -48,7 +48,7 @@
       minmax(10px, 69px)
       minmax(10px, 200px)
       minmax(10px, 120px);
-      border:1px solid #000;
+      /* border:1px solid #000; */
   }
   
   .myblock thead,
@@ -97,8 +97,9 @@
     background: #f8f6ff;
   }
 .excel-format{
-  width:40vw;
-  height:40vh;
+  width:38vw;
+  height:35vh;
+  height:fit-content;
   padding:20px;
   margin:30px;
   /* box-shadow: 
@@ -110,7 +111,7 @@
   /* background: #e1e0e0; */
 }
 .excel-format ul li{
-  font-size: 18px;
+  font-size: 19px;
 }
 .excel-icon{
   display:flex;
@@ -157,3 +158,17 @@
   font-size: 1.09em;
   border-radius: 4px;
 }
+/* .admin-logout{
+  font-size:1.5rem;
+  color:#000;
+  text-decoration: none;
+
+}
+.admin-logout:hover{
+  text-decoration: none;
+  color:#ddd;
+}
+.top_navbar li{
+  margin:auto;
+  margin-right:100px;
+} */
