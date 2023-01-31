@@ -55,15 +55,15 @@ export default function Quest(props)
         <div className="quest-container">
         <div class="item quest-header">
             <h3 class="quest-header">Solved: 0/3</h3>
-            <h3 class="quest-header"><Link to={`/home/${params.name}/leaderboard`} className='ques-board'>Leaderboard</Link></h3>
+            {/* <h3 class="quest-header"><Link to={`/home/${params.name}/leaderboard`} className='ques-board'>Leaderboard</Link></h3> */}
             {/* <img src={require('./change-icon.png')} alt="img" onClick={handleThemeChange}/> */}
             <button class="logout quest-header"onClick={signoutHandler}>Logout</button>
         </div>
-        <div className="item sidebar">
+        <div className="item quest-sidebar">
             <div id="hover"><a href="/quest"><p class="num">Quests</p></a></div>
-            <div id="hover"><a href="/"><p class="num">1</p></a></div>
-            <div id="hover"><a href="/"><p class="num">2</p></a></div>
-            <div id="hover"><a href="/"><p class="num">3</p></a></div>
+            <div id="hover"><a href="/compiler/1"><p class="num">1</p></a></div>
+            <div id="hover"><a href="/compiler/2"><p class="num">2</p></a></div>
+            <div id="hover"><a href="/compiler/3"><p class="num">3</p></a></div>
         </div>
 
 
