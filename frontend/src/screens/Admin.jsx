@@ -96,6 +96,7 @@ export default function Admin() {
         <div class="section">
           <div class="top_navbar">
             <h3>Admin Dashboard</h3>
+            <li ><Link to="/" class="admin-logout">Logout</Link></li>
           </div>
         </div>
         <div class="sidebar">
@@ -113,12 +114,11 @@ export default function Admin() {
                 <span class="item">Assign test</span>
               </Link>
             </li>
-            {/* <li>
-              <Link to="/Filter">
-                <span class="item">Questions Excel</span>
+            <li>
+              <Link to="/report">
+                <span class="item">Report</span>
               </Link>
-            </li> */}
-            {/* <Admin /> */}
+            </li>
           </ul>
         </div>
       </div>
