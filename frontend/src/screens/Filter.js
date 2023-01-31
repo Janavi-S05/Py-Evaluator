@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, renderMatches, useNavigate } from 'react-router-dom';
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import {render} from 'react-dom';
-// import { toast } from 'react-toastify';
 import clgicon from './images/clgicon.png';
 import depticon from './images/depticon.png';
 import regnum from './images/regnum.png';
 import './filter.css';
-import "./sidebar.css";
+// import "./sidebar.css";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
@@ -88,8 +84,11 @@ export default function Filter() {
         <div class="section">
           <div class="top_navbar">
             <h3>Admin Dashboard</h3>
+            <li><Link to="/" class="admin-logout">Logout</Link></li>
           </div>
         </div>
+      </div>
+      <div class="sidebar-container">
         <div class="sidebar">
           <div class="profile">
             <p>Python Evaluator</p>
@@ -105,9 +104,15 @@ export default function Filter() {
                 <span class="item">Assign test</span>
               </Link>
             </li>
+            <li>
+              <Link to="/report">
+                <span class="item">Report</span>
+              </Link>
+            </li>
+            {/* <Admin /> */}
           </ul>
         </div>
-      </div>
+      {/* </div> */}
     <form className='filter-content'>
       <div className="filter1">
       <div className="neomorph-container">
@@ -205,8 +210,8 @@ export default function Filter() {
     
    </div>
    </form>
-   </div>
-  
+  </div>
+  </div>
   )
 
 }
