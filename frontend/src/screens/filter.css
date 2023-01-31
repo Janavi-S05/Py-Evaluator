@@ -209,8 +209,10 @@
 .filter-content{
   display:grid;
   grid-template-columns: 400px 400px;
-  width:fit-content;
+  /* width:fit-content; */
   margin:auto;
+  justify-content: center;
+  width:100%;
   margin-top:80px;
 }
 /* .filter1 .neomorph-container{
@@ -222,10 +224,6 @@
 }
 .filter1 button{
   margin:30px 0px 0px 0px;
-}
-.filter2 .neomorph-container{
-  /* margin-left:20px; */
-  /* width:100%; */
 }
 .clg-image{
   display: flex;
@@ -298,4 +296,73 @@
 }
 .filter-checkbox{
   margin-bottom: 10px;
+}
+.sidebar-container{
+  display:flex;
+  position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+}
+.sidebar{
+  background: rgb(222, 60, 93);
+  align-items: center;
+  transition: all 0.5s ease;
+  position:relative;
+  width: 245px;
+  height:100vh; 
+}
+.profile p{
+  font-size:23px;
+  margin-top:20px;
+  color: rgb(206, 240, 253);
+  padding:10px;
+}
+.profile{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar ul li a{
+  display: block;
+  padding:15px 5px;
+  border-bottom: 1px solid rgb(243, 66, 101);;
+  color: rgb(241, 237, 237);
+  font-size: 19px;
+  position: relative;
+  text-decoration: none;;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active{
+  color: rgb(243, 66, 101);;
+
+  background:white;
+  border-right: 2px solid rgb(243, 66, 101);
+}
+
+ .sidebar ul li a:hover .icon,
+ .sidebar ul li a.active .icon{
+  color: rgb(243, 66, 101);;
+}
+
+ .sidebar ul li a:hover:before,
+ .sidebar ul li a.active:before{
+  display: block;
+}
+.sidebar ul{
+  margin-top:50px;
+}
+.admin-logout{
+  font-size:1.5rem;
+  color:#000;
+  text-decoration: none;
+
+}
+.admin-logout:hover{
+  text-decoration: none;
+  color:#ddd;
+}
+.top_navbar li{
+  margin:auto;
+  margin-right:100px;
 }
