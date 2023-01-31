@@ -189,7 +189,7 @@ function Compiler() {
     //   document.removeEventListener('visibilitychange', handleVisibilityChange);
     // };
 
-  }, [compile], [warnings]);
+  }, [id]);
 
 
 
