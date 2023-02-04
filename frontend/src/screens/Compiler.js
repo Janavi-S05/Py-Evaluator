@@ -1,32 +1,21 @@
 import React, { useContext } from 'react';
 import { Navigate, renderMatches, useNavigate, useParams } from 'react-router-dom';
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Axios from 'axios';
-
 import { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 import "./compiler.css";
 import { Link } from 'react-router-dom';
-// import { toast } from 'react-toastify';
-// import Alert from './Alert';
 import CompilerComponent from '../components/CompilerComponent';
 import OutputComponent from '../components/OutputComponent';
-// import { useContext } from 'react';
 import { Store } from '../Store';
 import Modal from '../components/Modal';
 import QuestionHamburgerComponent from '../components/QuestionHamburgerComponent';
-
+import { useRef } from 'react';
 
 function useWarningCount() {
 
-  // const{state,dispatch:ctxDispatch}=useContext();
   const navigate = useNavigate();
-  // const [warningCount, setWarningCount] = useState(() =>
-  //   Number(localStorage.getItem('warningCount')) || 0
-  // );
-
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const [warningCount, setWarningCount] = useState(() => {
     const count = Number(localStorage.getItem('warningCount'))
@@ -40,7 +29,7 @@ function useWarningCount() {
       ctxDispatch({ type: 'DELETE_USERINFO' });
       localStorage.setItem('warningCount', 0);
       localStorage.removeItem('userInfo');
-      navigate('/')
+      navigate('/login')
     }
   }, [warningCount]);
 
@@ -60,8 +49,15 @@ function Compiler() {
   const [code, setCode] = useState([]);
   const [output, setOutput] = useState([])
   const [question, setQuestion] = useState([]);
+
+  const [timerDays, setTimerDays] = useState();
+  const [timerHours, setTimerHours] = useState();
+  const [timerMinutes, setTimerMinutes] = useState();
+  const [timerSeconds, setTimerSeconds] = useState();
+  const [countDownDate, setCountDownDate] = useState();
+  console.log(timerHours);
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userInfo } = state;
+  let interval = useRef();
 
   const signoutHandler = () => {
     ctxDispatch({ type: 'DELETE_USERINFO' });
@@ -70,14 +66,54 @@ function Compiler() {
     window.location.href = '/';
   }
 
+  const startTimer = () => {
+    console.log("startTimer is called")
+    const countDownDate = new Date("Feb 5,2023  11:51:00").getTime();
 
-  //   const endtestHandler=()=>{
+    setCountDownDate(countDownDate);
+    interval.current = setInterval(() => {
+      const now = new Date().getTime();
+      const date = new Date(now);
+      console.log(date.getFullYear());
+      // console.log(now);
+      // const duration=countDownDate-now;
 
-  //     localStorage.removeItem('userInfo');
-  //     window.location.href='/login';
-  //   }
+      const distance = countDownDate - now;
+      // const distance=now +duration;
 
+      const days = Math.floor(distance / (24 * 60 * 60 * 1000));
+      const hours = Math.floor(
+        (distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (60 * 60 * 1000)) / (1000 * 60));
+      const seconds = Math.floor((distance % (60 * 1000)) / 1000);
 
+      if (distance < 0) {
+        // Stop Timer
+
+        clearInterval(interval.current);
+        navigate("/");
+      } else {
+        // Update Timer
+        setTimerDays(days);
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+        setTimerSeconds(seconds);
+      }
+    }, 1000);
+  };
+
+  useEffect(() => {
+    startTimer();
+    return () => {
+      clearInterval(interval.current);
+    };
+  }, [countDownDate]);
+
+  const stop = () => {
+    clearInterval(interval.current);
+
+  }
 
   const getLocalCode = () => {
     let tempcode = localStorage.getItem('tempcode');
@@ -118,6 +154,9 @@ function Compiler() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    // const code=localStorage.getItem('tempcode');
+    // console.log(code);
+    const { tempcode: code } = tempcode;
     try {
       const result = await Axios.post(`/api/users/output/${id}`, {
         code,
@@ -132,15 +171,6 @@ function Compiler() {
   }
 
 
-  // function handleVisibilityChange() {
-  //   if (document.hidden) {
-  //     setWarnings((prevWarnings) => prevWarnings + 1);
-  //     alert(`You have been warned ${warnings} times. Do not leave this page!`);
-  //     if (warnings >= 3) {
-  //       window.location.replace('/');
-  //     }
-  //   }
-  // }
 
 
   useEffect(() => {
@@ -165,29 +195,11 @@ function Compiler() {
       setCompile(result.data);
       setQuestion(resultquest.data);
 
-      // e.preventDefault();
-      // try{
-      //   const quest=await Axios.get('/api/users/quest');
-      //   const [questobj]=quest.data;
-      //   console.log(quest.data)
-      //   console.log(questobj);
-      //   setQuestion(quest.data)
-
-
-      //    navigate(`/home/${params.name}/quest`);
-      // }
-      // catch(err){
-      //   console.log(err);
-      // }
 
 
     }; fetchData();
 
-    //   window.myTimer();
-    // document.addEventListener('visibilitychange', handleVisibilityChange);
-    // return () => {
-    //   document.removeEventListener('visibilitychange', handleVisibilityChange);
-    // };
+    startTimer();
 
   }, [id]);
 
@@ -199,54 +211,50 @@ function Compiler() {
     <div class="wrapper">
       <div class="section">
         <div class="topnav">
+          {/* <a href="#home" class="active">Python Evaluator</a> */}
           <div className="logout-div">
             <a href="#home" class="active">Python Evaluator</a>
             {/* <a href="/" className="logout-header">Logout</a> */}
             <button class="logout logout-header" onClick={signoutHandler}>Logout</button>
           </div>
-          {/* <div id="myLinks">
-            <Link to={`/compiler/1`}>Question 1</Link>
-            <Link to={`/compiler/2`}>Question 2</Link>
-            <Link to={`/compiler/3`}>Question 3</Link>
-          </div> */}
+
+
           <div id="myLinks">
-            {question.map((q)=>{
+            {question.map((q) => {
               console.log(q.quest);
-              return(
+              return (
                 <QuestionHamburgerComponent
                   qdisp={q.quest}
                   qid={q.id}
-                />
+                />
               )
-               
+
             })}
-                {/* <a href="/compiler">All</a>
+            {/* <a href="/compiler">All</a>
                 <a href="/">Question 1</a>
                 <a href="/">Question 2</a>
                 <a href="/">Question 3</a> */}
-                {/* <button type="button" class="quest-btn btn btn-danger" onClick={()=>{navigate(`/compiler/2`)}}>Question 2</button> */}
-                 {/* {question.map((q)=>{
+            {/* <button type="button" class="quest-btn btn btn-danger" onClick={()=>{navigate(`/compiler/2`)}}>Question 2</button> */}
+            {/* {question.map((q)=>{
                   <Link to={`/compiler/1`}>{question.quest}</Link>
                  }
 
                  )} */}
-                 {/* <Link to={`/compiler/1`}>Question 1</Link>
+            {/* <Link to={`/compiler/1`}>Question 1</Link>
                 <Link to={`/compiler/2`}>Question 2</Link>
                 <Link to={`/compiler/3`}>Question 3</Link>  */}
-            </div>
+          </div>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <button onClick={window['myFunction']}><i class="fa fa-bars"></i></button>
           </a>
-          {/* <button
-        className="openModalBtn"
-        onClick={() => {
-          setModalOpen(true);
-        }}
-      >
-        Open
-      </button>
-      {modalOpen && <Modal setOpenModal={setModalOpen} />} */}
-          {modalOpen && <Modal setOpenModal={setModalOpen} />}
+          {modalOpen && <Modal
+
+            timerDays={timerDays}
+            timerHours={timerHours}
+            timerMinutes={timerMinutes}
+            timerSeconds={timerSeconds}
+            setOpenModal={setModalOpen} />}
+
         </div>
       </div>
 
@@ -283,19 +291,22 @@ function Compiler() {
           <center id="icon-time">
             <i class="fas fa-tachometer-alt" id="icon-space"></i>
             <div class="mobile-container">
-            {/* <i class='fas fa-exclamation-triangle'></i> */}
               <i class='fas fa-exclamation-triangle'><p className="warning-count">Warning count: {warningCount}</p></i>
               <div id="clockdiv">
                 <div className="inner-clock">
-                  <span className="hours" id="hour"></span>
+                  <span className="hours" id="hour">{timerDays}</span>
                   <h3 className="timer-para">:</h3>
                 </div>
                 <div className="inner-clock">
-                  <span className="minutes" id="minute"></span>
+                  <span className="hours" id="hour">{timerHours}</span>
                   <h3 className="timer-para">:</h3>
                 </div>
                 <div className="inner-clock">
-                  <span className="seconds" id="second"></span>
+                  <span className="minutes" id="minute">{timerMinutes}</span>
+                  <h3 className="timer-para">:</h3>
+                </div>
+                <div className="inner-clock">
+                  <span className="seconds" id="second">{timerSeconds}</span>
                 </div>
               </div>
               <div className="end-test">
@@ -308,9 +319,7 @@ function Compiler() {
                 >
                   End Test
                 </button>
-                {/* {modalOpen && <Modal setOpenModal={setModalOpen} />} */}
-
-              </div>
+                </div>
             </div>
           </center>
           <form onSubmit={submitHandler}>
@@ -334,14 +343,11 @@ function Compiler() {
 
             </div>
             <div class="col">
-              {/* <button className="saveCode">Save Code</button> */}
               <div id="button">
-                <button className="btn btn-success">Save</button>
                 {/* <button class="btn btn-success">Run Code</button> */}
                 <button className="btn btn-success" type="submit">Run</button>
                 <br />
                 <button class="btn btn-success">Submit</button>
-                {/* Warning count: {warningCount} */}
 
                 <br />
                 <pre id="ans"></pre>
