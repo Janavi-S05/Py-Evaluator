@@ -80,7 +80,7 @@ export default function Filter() {
 
   return (
     <div>
-    <div class="wrapper">
+      <div class="wrapper">
         <div class="section">
           <div class="top_navbar">
             <h3>Admin Dashboard</h3>
@@ -90,7 +90,7 @@ export default function Filter() {
       </div>
       <div class="sidebar-container">
         <div class="sidebar">
-          <div class="profile">
+          <div class="profile profile-header">
             <p>Python Evaluator</p>
           </div>
           <ul>
@@ -112,106 +112,106 @@ export default function Filter() {
             {/* <Admin /> */}
           </ul>
         </div>
-      {/* </div> */}
-    <form className='filter-content'>
-      <div className="filter1">
-      <div className="neomorph-container">
-        <label className="neomorph-title">Test Name:</label>
-        <input type="text" name="testName" className="neomorph-input" placeholder="Test name" required onChange={(e) => settestName(e.target.value)} />
-      {/* </div>
+        {/* </div> */}
+        <form className='filter-content'>
+          <div className="filter1">
+            <div className="neomorph-container">
+              <label className="neomorph-title">Test Name:</label>
+              <input type="text" name="testName" className="neomorph-input" placeholder="Test name" required onChange={(e) => settestName(e.target.value)} />
+              {/* </div>
       <div className="form-group"> */}
-        <label className="neomorph-title">Start Time:</label>
-        <input type="datetime-local" className="neomorph-input" name="startTime" required onChange={(e) => setstartTime(e.target.value)} />
-      {/* </div>
+              <label className="neomorph-title">Start Time:</label>
+              <input type="datetime-local" className="neomorph-input" name="startTime" required onChange={(e) => setstartTime(e.target.value)} />
+              {/* </div>
       <div className="form-group"> */}
-        <label className="neomorph-title">End Time:</label>
-        <input type="datetime-local" className="neomorph-input" name="endTime" required onChange={(e) => setendTime(e.target.value)} />
-      {/* </div>
+              <label className="neomorph-title">End Time:</label>
+              <input type="datetime-local" className="neomorph-input" name="endTime" required onChange={(e) => setendTime(e.target.value)} />
+              {/* </div>
       <div className="form-group"> */}
-        <label className="neomorph-title">Duration:</label>
-        <input type="time" className="neomorph-input" name="duration" placeholder="Duration (in minutes)" required onChange={(e) => setDuration(e.target.value)} />
-      </div>
-      <button className="btn btn-danger"type="submit">Submit</button>
-      </div>
-      <div className="filter2">
-      <div className="neomorph-container">
-      <div className='neomorph-filter'>
-        {/* <label>Filter by college:</label> */}
-        <div className='clg-image'>
-        <input value={constraints.college} placeholder="filter by college" onChange={(e) => setConstraints({ ...constraints, college: e.target.value })} />
-        <img src={clgicon} ></img>
-        </div>
-    {/* <div> */}
-        {/* <label>Filter by department:</label> */}
-        <div className='clg-image'>
-        <input value={constraints.department} placeholder="filter by department" onChange={(e) => setConstraints({ ...constraints, department: e.target.value })} />
-        <img src={depticon} ></img>
-        </div>
-        {/* </div>
+              <label className="neomorph-title">Duration:</label>
+              <input type="time" className="neomorph-input" name="duration" placeholder="Duration (in minutes)" required onChange={(e) => setDuration(e.target.value)} />
+            </div>
+            <button className="btn btn-danger" type="submit">Submit</button>
+          </div>
+          <div className="filter2">
+            <div className="neomorph-container">
+              <div className='neomorph-filter'>
+                {/* <label>Filter by college:</label> */}
+                <div className='clg-image'>
+                  <input value={constraints.college} placeholder="filter by college" onChange={(e) => setConstraints({ ...constraints, college: e.target.value })} />
+                  <img src={clgicon} ></img>
+                </div>
+                {/* <div> */}
+                {/* <label>Filter by department:</label> */}
+                <div className='clg-image'>
+                  <input value={constraints.department} placeholder="filter by department" onChange={(e) => setConstraints({ ...constraints, department: e.target.value })} />
+                  <img src={depticon} ></img>
+                </div>
+                {/* </div>
     <div> */}
-        {/* <label>Filter by Registration Number:</label> */}
-        <div className='clg-image'>
-        <input value={constraints.regNumb} placeholder="filter by register number" onChange={(e) => setConstraints({ ...constraints, regNumb: e.target.value })} />
-        <img src={regnum} ></img>
-        </div>
-      </div>
-    
-      <div className="filter-checkbox">
-      <ul className="reg-box">
-        {filteredStudents.map(student => {
-          return (
-            <label key={student.id}>
-              <input
-                type="checkbox"
-                checked={selectedstudents.includes(student)}
-                onChange={() => handleChangeStudents(student)}
-              />
-              {student.regNumb}
-            </label>
-            
-          );
-        })}
-      </ul>
-      </div>
-      <div>
-        <label>Filter by level:</label>
-        <input value={setQuestions.level} onChange={(e) => setLevels({ ...levels, level: e.target.value })} />
-      </div>
-      <ul>
-        {/* {filteredQuestions.map(question=> (
+                {/* <label>Filter by Registration Number:</label> */}
+                <div className='clg-image'>
+                  <input value={constraints.regNumb} placeholder="filter by register number" onChange={(e) => setConstraints({ ...constraints, regNumb: e.target.value })} />
+                  <img src={regnum} ></img>
+                </div>
+              </div>
+
+              <div className="filter-checkbox">
+                <ul className="reg-box">
+                  {filteredStudents.map(student => {
+                    return (
+                      <label key={student.id}>
+                        <input
+                          type="checkbox"
+                          checked={selectedstudents.includes(student)}
+                          onChange={() => handleChangeStudents(student)}
+                        />
+                        {student.regNumb}
+                      </label>
+
+                    );
+                  })}
+                </ul>
+              </div>
+              <div>
+                <label>Filter by level:</label>
+                <input value={setQuestions.level} onChange={(e) => setLevels({ ...levels, level: e.target.value })} />
+              </div>
+              <ul>
+                {/* {filteredQuestions.map(question=> (
         <li >{question.questdesc}</li>
       ))} */}
 
-        {filteredQuestions.map((q) => {
-          {/* console.log(q); */ }
-          return (
+                {filteredQuestions.map((q) => {
+                  {/* console.log(q); */ }
+                  return (
 
-            <label key={q.qnum}>
-              <input
-                className="email-box" type="checkbox"
-                checked={selectedquestions.includes(q)}
-                onChange={() => handleChangeQuestions(q)}
-              // checked={
+                    <label key={q.qnum}>
+                      <input
+                        className="email-box" type="checkbox"
+                        checked={selectedquestions.includes(q)}
+                        onChange={() => handleChangeQuestions(q)}
+                      // checked={
 
-              //  selectedquestions.includes(q) ? 
-              //  setSelectedquestions(selectedquestions.filter(i =>i !=q))
-              //  : setSelectedquestions([...selectedquestions,q])
+                      //  selectedquestions.includes(q) ? 
+                      //  setSelectedquestions(selectedquestions.filter(i =>i !=q))
+                      //  : setSelectedquestions([...selectedquestions,q])
 
-              // }
-              />
-              {q.questdesc}
-            </label>
+                      // }
+                      />
+                      {q.questdesc}
+                    </label>
 
-          );
-        }
-        )}
-      </ul>
-   </div>
-    
-   </div>
-   </form>
-  </div>
-  </div>
+                  );
+                }
+                )}
+              </ul>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
   )
 
 }
