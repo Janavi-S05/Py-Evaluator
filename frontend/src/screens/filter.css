@@ -212,7 +212,7 @@
   /* width:fit-content; */
   margin:auto;
   justify-content: center;
-  width:100%;
+  width:80vw;
   margin-top:80px;
 }
 /* .filter1 .neomorph-container{
@@ -298,7 +298,8 @@
   margin-bottom: 10px;
 }
 .sidebar-container{
-  display:flex;
+  display:grid;
+  grid-template-columns: 219px 400px;
   position: fixed;
       top: 0;
       left: 0;
@@ -309,26 +310,29 @@
   align-items: center;
   transition: all 0.5s ease;
   position:relative;
-  width: 245px;
+  width: fit-content;
   height:100vh; 
 }
 .profile p{
   font-size:23px;
-  margin-top:20px;
+  /* margin-top:50px; */
   color: rgb(206, 240, 253);
   padding:10px;
 }
 .profile{
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+  /* margin-top:30px; */
   text-align: center;
 }
-
+.profile-header{
+  margin-top:20px;
+}
 .sidebar ul li a{
   display: block;
-  padding:15px 5px;
+  padding:10px 8px;
   border-bottom: 1px solid rgb(243, 66, 101);;
   color: rgb(241, 237, 237);
-  font-size: 19px;
+  font-size: 20px;
   position: relative;
   text-decoration: none;;
 }
