@@ -27,8 +27,41 @@ export default function ViewReport(props) {
   }, []);
 
   return (
-    <div class="report-container">
-      <div class="wrapper">
+    <div>
+    <div class="wrapper">
+        <div class="section">
+          <div class="top_navbar">
+            <h3>Admin Dashboard</h3>
+            <li><Link to="/" class="admin-logout">Logout</Link></li>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-container">
+        <div class="sidebar">
+          <div class="profile">
+            <p>Python Evaluator</p>
+          </div>
+          <ul>
+            <li>
+              <Link to='/Admin' >
+                <span class="item">Upload Student details</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/Filter">
+                <span class="item">Assign test</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/report" class="active">
+                <span class="item">Report</span>
+              </Link>
+            </li>
+            {/* <Admin /> */}
+          </ul>
+        </div>
+    {/* // <div class="report-container"> */}
+      {/* <div class="wrapper">
         <div class="section">
           <div class="top_navbar">
             <h3>Admin Dashboard</h3>
@@ -57,7 +90,7 @@ export default function ViewReport(props) {
             </li>
           </ul>
         </div>
-        </div>
+        </div> */}
     <div className="leaderboard">
       <div className="board-container">
         <div className="myblock">
@@ -109,6 +142,7 @@ export default function ViewReport(props) {
         </div>
       </div>
     </div>
+</div>
 </div>
   )
 
