@@ -68,7 +68,7 @@ export default function Report() {
       <div className="leaderboard">
         <div className="board-container">
           <div class="dropdown">
-            <input placeholder="choose"></input>
+            <input placeholder="Select Test Report"></input>
             <div class="dropdown-content">
               <div class="dropdown-div">
 
@@ -81,9 +81,6 @@ export default function Report() {
                     />
                   );
                 }
-
-
-
                 )}
               </div>
             </div>
