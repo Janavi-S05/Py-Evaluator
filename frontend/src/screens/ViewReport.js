@@ -36,7 +36,7 @@ export default function ViewReport(props) {
           </div>
         </div>
       </div>
-      <div class="sidebar-container">
+      <div class="report-sidebar">
         <div class="sidebar">
           <div class="profile">
             <p>Python Evaluator</p>
