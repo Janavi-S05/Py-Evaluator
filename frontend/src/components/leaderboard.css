@@ -232,3 +232,8 @@
   background:transparent;
   padding-bottom:7px;
 }
+.report-btn:hover{
+  border: none;
+  outline:none;
+  color:#fff;
+}
