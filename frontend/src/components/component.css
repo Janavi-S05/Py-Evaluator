@@ -9,5 +9,10 @@
     color:white;
     background-color:rgb(210, 203, 203);
   }
-  
-  
+  .video{
+    width:15vw;
+    /* height:30vh; */
+  }
+  .testcase-div{
+    margin-left:20px;
+  }
