@@ -1,21 +1,33 @@
 import React, { useContext } from 'react';
 import { Navigate, renderMatches, useNavigate, useParams } from 'react-router-dom';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Axios from 'axios';
+
 import { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 import "./compiler.css";
 import { Link } from 'react-router-dom';
+// import { toast } from 'react-toastify';
+// import Alert from './Alert';
 import CompilerComponent from '../components/CompilerComponent';
 import OutputComponent from '../components/OutputComponent';
+// import { useContext } from 'react';
 import { Store } from '../Store';
 import Modal from '../components/Modal';
 import QuestionHamburgerComponent from '../components/QuestionHamburgerComponent';
 import { useRef } from 'react';
+import Camera from '../components/Camera';
 
 function useWarningCount() {
 
+  // const{state,dispatch:ctxDispatch}=useContext();
   const navigate = useNavigate();
+  // const [warningCount, setWarningCount] = useState(() =>
+  //   Number(localStorage.getItem('warningCount')) || 0
+  // );
+
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const [warningCount, setWarningCount] = useState(() => {
     const count = Number(localStorage.getItem('warningCount'))
@@ -36,9 +48,6 @@ function useWarningCount() {
   return [warningCount, setWarningCount];
 }
 
-
-
-
 function Compiler() {
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
@@ -49,7 +58,6 @@ function Compiler() {
   const [code, setCode] = useState([]);
   const [output, setOutput] = useState([])
   const [question, setQuestion] = useState([]);
-
   const [timerDays, setTimerDays] = useState();
   const [timerHours, setTimerHours] = useState();
   const [timerMinutes, setTimerMinutes] = useState();
@@ -68,7 +76,7 @@ function Compiler() {
 
   const startTimer = () => {
     console.log("startTimer is called")
-    const countDownDate = new Date("Feb 5,2023  11:51:00").getTime();
+    const countDownDate = new Date("Feb 25,2023  11:51:00").getTime();
 
     setCountDownDate(countDownDate);
     interval.current = setInterval(() => {
@@ -215,9 +223,13 @@ function Compiler() {
           <div className="logout-div">
             <a href="#home" class="active">Python Evaluator</a>
             {/* <a href="/" className="logout-header">Logout</a> */}
-            <button class="logout logout-header" onClick={signoutHandler}>Logout</button>
+            <button class="logout logout-header" onClick={signoutHandler}>Logout
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M12 21c4.411 0 8-3.589 8-8 0-3.35-2.072-6.221-5-7.411v2.223A6 6 0 0 1 18 13c0 3.309-2.691 6-6 6s-6-2.691-6-6a5.999 5.999 0 0 1 3-5.188V5.589C6.072 6.779 4 9.65 4 13c0 4.411 3.589 8 8 8z" />
+                                <path d="M11 2h2v10h-2z" />
+                            </svg>
+                            </button>
           </div>
-
 
           <div id="myLinks">
             {question.map((q) => {
@@ -283,10 +295,11 @@ function Compiler() {
           )}
 
 
-
+          {/* <Camera/> */}
 
 
         </div>
+        {/* <Camera/> */}
         <div class="column" >
           <center id="icon-time">
             <i class="fas fa-tachometer-alt" id="icon-space"></i>
@@ -350,9 +363,15 @@ function Compiler() {
                 <button class="btn btn-success">Submit</button>
 
                 <br />
-                <pre id="ans"></pre>
-              </div>
+                <div className="webcam">
+            <Camera/>
             </div>
+              </div>
+             
+            </div>
+            {/* <div className="webcam">
+            <Camera/>
+            </div> */}
             {/* </div> */}
           </form>
 
