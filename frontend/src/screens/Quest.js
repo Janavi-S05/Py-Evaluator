@@ -53,11 +53,14 @@ export default function Quest(props)
             
         {/* <h1>Inside quest page</h1> */}
         <div className="quest-container">
-        <div class="item quest-header">
-            <h3 class="quest-header">Solved: 0/3</h3>
-            {/* <h3 class="quest-header"><Link to={`/home/${params.name}/leaderboard`} className='ques-board'>Leaderboard</Link></h3> */}
-            {/* <img src={require('./change-icon.png')} alt="img" onClick={handleThemeChange}/> */}
-            <button class="logout quest-header"onClick={signoutHandler}>Logout</button>
+        <div className="item quest-header">
+            <h3 className="solve">Solved: 0/3</h3>
+            <button className="logout "onClick={signoutHandler}>Logout
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M12 21c4.411 0 8-3.589 8-8 0-3.35-2.072-6.221-5-7.411v2.223A6 6 0 0 1 18 13c0 3.309-2.691 6-6 6s-6-2.691-6-6a5.999 5.999 0 0 1 3-5.188V5.589C6.072 6.779 4 9.65 4 13c0 4.411 3.589 8 8 8z" />
+                                <path d="M11 2h2v10h-2z" />
+                            </svg>
+                            </button>
         </div>
         <div className="item quest-sidebar">
             <div id="hover"><a href="/quest"><p class="num">Quests</p></a></div>
