@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Navigate, renderMatches, useNavigate } from 'react-router-dom';
 // import Form from 'react-bootstrap/Form';
 import {render} from 'react-dom';
-import "./leaderboard.css";
+// import "./leaderboard.css";
 import axios from 'axios'; 
 import { useEffect,useState } from 'react'; 
 
@@ -11,12 +11,7 @@ export default function LeaderboardComponent(props)
 {
 
     const navigate= useNavigate();
-   
-   
-  return (
-
-    
-    
+  return (  
 <tbody>
   <tr>
     <td>{props.rank}</td>
@@ -30,19 +25,9 @@ export default function LeaderboardComponent(props)
       </div>
     </td>
     <td>{props.finishtime}</td>
+    <td></td>
   </tr>
-  
-    
-    
-  
-  </tbody>
-
-      
-          
-
-      
-    
-        
+  </tbody>     
     )
     
 }
