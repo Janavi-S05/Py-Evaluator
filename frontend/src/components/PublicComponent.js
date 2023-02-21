@@ -15,6 +15,14 @@ export default function PublicComponent(props)
                 <p><span className="public-case">3/3</span> Public test cases passed</p>
                 <p>Private test cases failed <span className="public-case">{props.totaltestcasePassed}</span></p>
             </div>
+            {/* <div className="input-case">
+                <p>Your Output:</p>
+                <p>{props.yourOutput}</p>
+            </div>
+            <div className="input-case highlight">
+                <p>Expected Output:</p>
+                <p>{props.expectedOutput}</p>
+            </div> */}
         </div>
         </div>
     )
