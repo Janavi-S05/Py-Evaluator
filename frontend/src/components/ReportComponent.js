@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Navigate, renderMatches, useNavigate } from 'react-router-dom';
 // import Form from 'react-bootstrap/Form';
 import {render} from 'react-dom';
-import "./leaderboard.css";
+// import "./leaderboard.css";
 import axios from 'axios'; 
 import { useEffect,useState } from 'react'; 
 
@@ -12,9 +12,12 @@ export default function ReportComponent(props)
 
     const navigate= useNavigate();
   return (  
-<tbody>
+<tbody class="result">
   <tr>
-    <td>{props.rank}</td>
+    <td>
+      <td>{props.rank}
+      </td>
+    </td>
     <td>
       <div>
       <img
@@ -24,7 +27,8 @@ export default function ReportComponent(props)
       <p>{props.name}</p>
       </div>
     </td>
-    <td>{props.time}</td>
+    <td>
+      <td>{props.time}</td></td>
     <td>
     <td>{props.score}</td>
     
