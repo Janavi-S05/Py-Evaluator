@@ -15,7 +15,7 @@ export default function TestListComponent(props)
    
    
   return (
-    <div>
+    <div class="menu-item">
         <button type="button" class="report-btn" onClick={()=>{navigate(`/viewreport/${props.testid}`)}}>Report for Test{props.testid}</button>
       
     </div>     
