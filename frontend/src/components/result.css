@@ -5,11 +5,11 @@
     overflow: hidden;
     display: block;
     height:70px;
-    background-color: rgb(243, 66, 101);
+    background: rgb(6,196,114);
+    background: linear-gradient(90deg, rgba(6,196,114,1) 0%, rgba(0,212,255,1) 100%);
   }
   .navigation-board{
     height:100vh;
-    background: url("https://www.shutterstock.com/image-photo/cream-concreted-wall-interiors-outdoor-260nw-1692744547.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -65,7 +65,7 @@
       width:fit-content;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
-      border-left:5px solid crimson;
+      border-left:5px solid rgb(6,196,114);
     }
     .myblock1 thead,
     .myblock1 tbody,
@@ -86,11 +86,11 @@
     .myblock1 th {
       position: sticky;
       top: 0;
-      background: rgb(243, 66, 101);
-      text-align: left;
+      background: rgb(106, 200, 229);
+background: linear-gradient(90deg, rgb(95, 202, 234) 0%, rgb(176, 233, 184) 38%, rgba(207,235,211,1) 98%);
       font-weight: normal;
       font-size: 1.1rem;
-      color: white;
+      /* color: white; */
       text-align: center;
     }
     .myblock1
@@ -116,4 +116,7 @@
     }
     .theme-dark .form-1 h1,.theme-dark .form-1 label{
       color:white;
+    }
+    .analysis th{
+      background-color: gray;
     }
