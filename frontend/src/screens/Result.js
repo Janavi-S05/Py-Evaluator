@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Navigate, renderMatches, useNavigate } from 'react-router-dom';
+// import Form from 'react-bootstrap/Form';
 import {render} from 'react-dom';
 
 import axios from 'axios'; 
@@ -17,6 +18,22 @@ export default function Result()
         const fetchData=async()=>{
             const result=await axios.get('/api/users/result');
             setResult(result.data);
+        
+        // e.preventDefault();
+        // try{
+        //   const quest=await Axios.get('/api/users/quest');
+        //   const [questobj]=quest.data;
+        //   console.log(quest.data)
+        //   console.log(questobj);
+        //   setQuestion(quest.data)
+         
+          
+        //    navigate(`/home/${params.name}/quest`);
+        // }
+        // catch(err){
+        //   console.log(err);
+        // }
+        
       };
       fetchData();
     },[]);
@@ -25,13 +42,13 @@ export default function Result()
    
   return (
 
-    <div className="nav-board">
+    <div className="navigation-board">
     <ul>
         <li><a href="profile.html">Profile</a></li>
         <li><a href="/leaderboard">Leaderboard</a></li>
     </ul>
 <div className="result-block" style={{display:'flex'}}>
-<div class="myblock1">
+<div class="myblock1 analysis">
 <h2>Overall Analysis</h2>
 {res.map((q)=>{
     return(
@@ -58,10 +75,33 @@ export default function Result()
  );
  }
  )}
+
+
   </table>
 </div>
 </div>
 </div>
+    
     )
     
 }
+
+
+
+// {leaderboard.map((q)=>{
+//     console.log(q);
+// return(
+//     <LeaderboardComponent 
+// rank={q.rank}
+// name={q.name}
+// finishtime={q.finishtime}
+// />
+// );
+// }
+
+
+
+// )}
+
+
+
