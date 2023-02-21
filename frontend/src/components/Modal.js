@@ -4,8 +4,13 @@ import "./Modal.css";
 import { useContext } from "react";
 import { Store } from "../Store";
 
-function Modal({ setOpenModal }) {
+function Modal({ setOpenModal,timerDays,timerHours,timerMinutes ,timerSeconds }) {
 
+    // console.log(timerMinutes);
+    console.log(" DAYS"+timerDays);
+    console.log("HOURS"+timerHours);
+    console.log("MINUTES"+timerMinutes);
+    console.log("SECONDS"+timerSeconds);
     const {state , dispatch:ctxDispatch}=useContext(Store);
     const[end,setEnd]=useState('');
     const navigate=useNavigate();
@@ -32,6 +37,7 @@ function Modal({ setOpenModal }) {
             new Promise(resolve => {
                 ctxDispatch({type:'DELETE_USERINFO'});
                 localStorage.removeItem('userInfo');
+                
                 resolve();
             }).then(() => {
                 navigate('/');
