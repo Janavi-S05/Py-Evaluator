@@ -14,8 +14,8 @@ export default function Login()
 
   const navigate= useNavigate();
   const[email,setEmail]=useState('');
-const[password,setPassword]=useState('');
-const{state,dispatch}=useContext(Store);
+  const[password,setPassword]=useState('');
+  const{state,dispatch}=useContext(Store);
 
 // const {search}=useLocation();
 // console.log(search);
@@ -41,7 +41,7 @@ const{state,dispatch}=useContext(Store);
           payload:{data}
         })
         navigate(`/home/${firstname}`);
-        // navigate(redirect ||`/home/${data.name}`)
+        // navigate(`/home/${data.name}`)
       }
       catch(err){
         console.log(err);
@@ -60,26 +60,20 @@ const{state,dispatch}=useContext(Store);
     };   
   
  
-return (
-
-  
-  <div className={`theme-${theme}`}>
-  <div className="login-container">
-  <form className="form-1" onSubmit={submitHandler}>
-  {theme==='light' ? <button className="login-icon" onClick={handleThemeChange} ><BsSun/></button>:<button className="login-icon" onClick={handleThemeChange} ><BsFillSunFill/></button> }
-    <h1>Python Evaluator</h1>
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email"  required onChange={(e)=>setEmail(e.target.value)}/>
+return ( 
+  <div class="login-content">
+<div class="login-container">
+  {/* <div class="logo"></div> */}
+  <h2>Python Evaluator</h2>
+  <form onSubmit={submitHandler}>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="email" placeholder="Enter your username" required onChange={(e)=>setEmail(e.target.value)}></input>
     <label for="password">Password</label>
-    <input type="password" name="password" id="password"  required onChange={(e)=>setPassword(e.target.value)}/>
-    <span>Forgot Password?</span>
-    <button class ="login-button" type="submit">Login</button>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required onChange={(e)=>setPassword(e.target.value)}></input>
+    <input type="submit" value="Login"></input>
   </form>
-  </div>
-  </div> 
-  
-
-   
+</div>
+</div>
   )
   
 }
