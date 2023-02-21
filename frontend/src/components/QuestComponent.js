@@ -10,23 +10,13 @@ import "../screens/Compiler";
 
 export default function QuestComponent(props)
 {
-
     const navigate= useNavigate();
-   
-   
-  return (
+    return (
     <div className="inner-quest">
-         <h3 className="sub-quest">{props.quest}</h3>
-        <button type="button" class="quest-btn btn btn-danger" style={{width:100,marginRight:20}}onClick={()=>{navigate(`/compiler/${props.id}`)}}>Solve</button>
-              
+         <h3 className="sub-quest">
+          {props.quest}</h3>
+        <button type="button" class="quest-btn btn btn-danger" style={{width:100,marginRight:20}}onClick={()=>{navigate(`/compiler/${props.id}`)}}>Solve</button>          
     </div>
-    
-                    
-                
-                
-           
-        
-
     )
     
 }
