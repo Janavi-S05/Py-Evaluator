@@ -9,7 +9,10 @@ import { useEffect,useState } from 'react';
 
 export default function OutputComponent(props)
 {
+
   const navigate= useNavigate();
+   
+   
   return (
     <div className="compile-msg">
         <input id="check" type="checkbox"></input>
