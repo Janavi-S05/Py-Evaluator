@@ -197,9 +197,9 @@ export default function Admin() {
                   <li>
                     Students of registered college can use this platform.
                   </li>
-                  <li>
-                    Email id must be valid.
-                  </li>
+                  <div class="excel-final">
+                     Email <a href=""> here </a> id must be valid.
+                    </div>
                 </ul>
               </div>
               <img src={excelfile}></img>
