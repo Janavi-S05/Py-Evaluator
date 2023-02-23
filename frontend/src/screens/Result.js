@@ -63,6 +63,7 @@ export default function Result()
   <tr>
     <th>Questions</th>
     <th>Passed</th>
+    <th>Score</th>
   </tr>
 </thead>
  {newresult.map((q)=>{
@@ -71,6 +72,7 @@ export default function Result()
      <ResultComponent
  questnum={q.questnum}
  passed={q.passed}
+ tscore={q.tscore}
  />
  );
  }
