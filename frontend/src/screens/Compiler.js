@@ -363,11 +363,13 @@ function Compiler() {
                 <button class="btn btn-success">Submit</button>
 
                 <br />
+                <div class="proctoring">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0jr3wCfxk2Px13BBe-ZZC2NoClf-ZhDQww&usqp=CAU"></img>
                 <div className="webcam">
-            <Camera/>
-            </div>
+                  <Camera/>
+                </div>
+                </div>
               </div>
-             
             </div>
             {/* <div className="webcam">
             <Camera/>
